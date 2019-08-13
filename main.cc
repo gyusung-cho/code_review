@@ -5,23 +5,23 @@
 using namespace std;
 
 template <typename T>
-void pushQueue(templatePriorityQueue<T>* Que, int data){
+void pushQueue(TemplatePriorityQueue<T>* Que, int data) {
 	cout << "[+] Integer "<< data <<" pushed in the Priority Queue." << endl;
 	Que->push(data);
 }
 
 template<typename T>
-void popQueue(templatePriorityQueue<T>* Que){
+void popQueue(TemplatePriorityQueue<T>* Que) {
 	cout << "[+] Integer "<< Que->top() << " will be poped from the Priority Queue." << endl;
 	Que->pop();
 }
 
-int main(int argc, char* argv[]){
-	templatePriorityQueue<int> priQueue;
+int main(int argc, char* argv[]) {
+	TemplatePriorityQueue<int> priQueue;
 	int customNumber = 0;
 
 	//empty check
-	if(priQueue.empty()){
+	if(priQueue.empty()) {
 		cout << "[!] Priority Queue is empty - initalized" << endl;
 	}
 
@@ -30,7 +30,7 @@ int main(int argc, char* argv[]){
 	pushQueue(&priQueue,598);
 	pushQueue(&priQueue,302);
 
-	if( argc > 1 ){
+	if (argc > 1) {
 		customNumber = atoi(argv[1]);
 		if( customNumber > -500 && customNumber < 2000 ){
 			pushQueue(&priQueue,customNumber);
@@ -44,7 +44,7 @@ int main(int argc, char* argv[]){
 	}
 
 	//empty & size
-	if(priQueue.empty()){
+	if (priQueue.empty()) {
 		cout << "[-] Priority Queue is empty. - Push method did not work!" << endl;
 		return -1;
 	}
